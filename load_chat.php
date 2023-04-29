@@ -10,7 +10,7 @@ $user2=$_POST["id2"];
 $connection= new mysqli ("localhost","root","abcd1234","react_chat");
 
 $connection->query("UPDATE `chat` SET `status_id`='2' WHERE (`user_from_id`='".$user1."' AND `user_to_id`='".$user2."') ");
-
+ 
 $table=$connection->query(" SELECT * FROM `chat`INNER JOIN `status` ON `chat`.`status_id`=`status`.`id`
 WHERE (`user_from_id`='".$user1."' AND `user_to_id`='".$user2."') OR(`user_from_id` ='".$user2."' AND `user_to_id`='".$user1."') ORDER BY `date_time` ASC ");
 
